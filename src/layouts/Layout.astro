@@ -1,0 +1,27 @@
+---
+import '@fontsource-variable/roboto'
+import '@fontsource/poppins'
+
+import '@styles/modern-normalize.css'
+import '@styles/global.css'
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <main class="main">
+      <slot />
+    </main>
+  </body>
+</html>
+<style>
+  .main {
+    padding: 1.5rem;
+  }
+</style>

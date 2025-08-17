@@ -1,27 +1,46 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/XKM9mJg7)
-# Torneo Peor UI/UX 🎨🧨
+# Astro Starter Kit: Basics
 
-¡Bienvenid@ al ~~mejor~~ peor torneo del DCC! 😻
+```sh
+pnpm create astro@latest -- --template basics
+```
 
-Tu objetivo será crear una Interfaz Grafica absurdamente incomoda, frustrante y divertida de usar para un usuario.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-# Categoria: Libre 🧠
-- En esta categoría, eres libre de crear la peor interfaz UI/UX jamas vista (de cualquier tipo)
-- Eres libre de realizarla como gustes, porfavor seguir las reglas del torneo para no ser descalificado
+## 🚀 Project Structure
 
-## Reglas Generales 👮🏻‍♂️
-- Las Bases del torneo se encuentran en : https://github.com/Antihackathon-Worst-UI-UX/antihackathon-template
-- No se permite contenido ofensivo, violento, racista, sexista, xenofóbico, homofóbico o irrespetuoso 😾
-- Solo puedes usar este repositorio para tu proyecto
-- Modificar solo el README para presentar el link donde alojes tu UI
-- Tu codigo debe estar en la carpeta `src/`: index.html + styles.css + app.js (estos ultimos 2 opcionales)
-- Para poder participar, tu aplicacion tiene que funcionar
-- Si bien la experiencia de usuario debe ser frustrante y/o divertida, tu UI tiene que cumplir con su objetivo
+Inside of your Astro project, you'll see the following folders and files:
 
-## Entrega ✅
-- Este repositorio será revisado por los jueces al termino de la competencia: *Martes 19 Agosto - 23:59*
-- Link Deploy = [Remplazar por el link donde tenga hosteada su UI]
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
----
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-¡Buena suerte ~~buen~~ mal diseñador/a 🧑🏻‍🎨👨🏻‍🎨!
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
