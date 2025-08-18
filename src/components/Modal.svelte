@@ -60,7 +60,7 @@
     background-color: white;
     color: #000;
     padding: 1rem;
-    max-height: 20rem;
+    max-height: 25rem;
     max-width: 80vw;
     overflow: auto;
     transition: background-color 0.5s;

@@ -8,7 +8,7 @@
   import Album from '@components/Album.svelte'
   import AskYesNo from '@components/AskYesNo.svelte'
 
-  let route = 'home'
+  let route = 'album'
 
   const navigate = () => {
     route = 'ask'

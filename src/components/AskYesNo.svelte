@@ -172,13 +172,13 @@
       } else {
         ATTACK_AND_DAMAGE_SOUND.currentTime = 0
         ATTACK_AND_DAMAGE_SOUND.play().catch(console.error)
+
+        isHit = true
+
+        setTimeout(() => {
+          isHit = false
+        }, 300)
       }
-
-      isHit = true
-
-      setTimeout(() => {
-        isHit = false
-      }, 300)
     }
 
     setTimeout(() => {
@@ -191,15 +191,19 @@
     onNo()
   }
 
-  onDestroy(() => {
-    stopMoving()
-    slashesContainer.textContent = ''
-  })
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === ' ') event.preventDefault()
+  }
 
   onMount(() => {
     AUDIOS.forEach((audio) => {
       audio.volume = 0.5
     })
+  })
+
+  onDestroy(() => {
+    stopMoving()
+    slashesContainer.textContent = ''
   })
 </script>
 
@@ -220,7 +224,7 @@
       class="button button--no"
       class:button--destroy={isMoving}
       disabled={showHealth}
-      on:click={handleNo}>No</button
+      onclick={handleNo}>No</button
     >
 
     <div
@@ -246,7 +250,8 @@
         class="button button--yes"
         class:button--blue={isButtonBlue}
         class:button--hit={isHit}
-        on:click={handleYes}>Sí</button
+        onclick={handleYes}
+        onkeydown={handleKeyDown}>Sí</button
       >
     </div>
   </section>
@@ -356,6 +361,7 @@
     transform: translate(-50%, -50%);
     z-index: 1000000;
     user-select: none;
+    pointer-events: none;
   }
 
   @keyframes destroy {

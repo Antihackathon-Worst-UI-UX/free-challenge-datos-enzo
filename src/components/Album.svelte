@@ -7,6 +7,9 @@
 
   import Songs from '@components/Songs.svelte'
   import Key from '@components/Key.svelte'
+  import VolumeController from '@components/VolumeController.svelte'
+  import Modal from '@components/Modal.svelte'
+  import Advertisement from '@components/Advertisement.svelte'
 
   export let onExit = () => {}
 
@@ -23,9 +26,15 @@
     songs: [],
   }
 
+  let angle = { value: 0, time: Date.now() }
+  let targetPlaybackRate = 0
+  let currentPlaybackRate = 0
+  let lastUpdate = 0
+  let lastDrag = 0
   let currentSong: null | Song = null
-
   let duration = 0
+  let volume: number = 100
+  let showAdvertisement = false
 
   let wavesurfer: WaveSurfer
 
@@ -54,15 +63,9 @@
     if (wavesurfer) wavesurfer.destroy()
   })
 
-  let angle = { value: 0, time: Date.now() }
-
-  let targetPlaybackRate = 0
-  let currentPlaybackRate = 0
-  let lastUpdate = 0
-
-  let lastDrag = 0
-
   const updateAudio = (time: DOMHighResTimeStamp) => {
+    if (wavesurfer) wavesurfer.setVolume(volume / 100)
+
     if (
       wavesurfer &&
       wavesurfer.isPlaying() &&
@@ -106,7 +109,12 @@
 
     updatePosition()
 
+    let accumulatedAngles = 0
+    let angleToShowAdvertisement = 10000
+
     const handleDrag = (event: PointerEvent) => {
+      if (showAdvertisement) return
+
       lastDrag = Date.now()
 
       const rect = container.getBoundingClientRect()
@@ -129,6 +137,13 @@
       const deltaTime = (now - angle.time) / 1000
       const angularSpeed = deltaAngle / deltaTime
 
+      accumulatedAngles = accumulatedAngles + Math.abs(angularSpeed)
+
+      if (accumulatedAngles > angleToShowAdvertisement) {
+        showAdvertisement = true
+        accumulatedAngles = 0
+        angleToShowAdvertisement = 5000000
+      }
       const speedFactor = -0.25
       targetPlaybackRate = Math.max(
         -1.25,
@@ -182,6 +197,7 @@
   {#if currentSong}
     <div class="player" transition:fade={{ duration: 100 }}>
       <p>Velocidad: {currentPlaybackRate.toFixed(1)}</p>
+      <p>Volumen: {volume}</p>
       <div use:waveform></div>
     </div>
   {/if}
@@ -192,13 +208,19 @@
         <div class="crank__handle" use:setupCrank></div>
       </div>
     </div>
+
+    <VolumeController bind:value={volume} />
   {/if}
 </div>
+
+<Modal bind:open={showAdvertisement}>
+  <Advertisement />
+</Modal>
 
 <style>
   .container {
     display: grid;
-    grid-template-columns: 1fr calc(4 * var(--radius));
+    grid-template-columns: 3fr calc(4 * var(--radius)) 1fr;
     grid-auto-rows: max-content;
     position: fixed;
     top: 0;
@@ -215,7 +237,7 @@
   }
 
   .songs {
-    grid-column: span 2;
+    grid-column: span 3;
     width: 100%;
   }
 
@@ -227,9 +249,7 @@
   .crank {
     display: grid;
     place-content: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+    position: relative;
     width: calc(4 * var(--radius));
     height: calc(4 * var(--radius));
   }
