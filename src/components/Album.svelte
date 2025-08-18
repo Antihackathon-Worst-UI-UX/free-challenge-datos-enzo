@@ -33,7 +33,7 @@
   let lastDrag = 0
   let currentSong: null | Song = null
   let duration = 0
-  let volume: number = 100
+  let volume: number = 0
   let showAdvertisement = false
 
   let wavesurfer: WaveSurfer

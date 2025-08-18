@@ -50,8 +50,6 @@
 </form>
 <Modal bind:open={openModal}>
   <p class="dummy">
-    ¡Continua bajando!
-
     {#each Array(10) as _, i}
       <span class="dummy__arrow">⬇️</span>
     {/each}

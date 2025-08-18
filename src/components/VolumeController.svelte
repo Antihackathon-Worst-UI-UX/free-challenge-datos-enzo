@@ -32,7 +32,7 @@
   aria-label="Controlador de volumen"
   transition:fly={{ duration: 500, x: 100 }}
 >
-  <button on:click={handleIncrease}><Key>Increase</Key></button>
+  <button on:click={handleIncrease}><Key>Aumentar</Key></button>
 
   <p
     class="progress"
@@ -48,9 +48,9 @@
   <button on:click={handleSelect}>
     <Key>
       {#if active}
-        Set Volume
+        Establecer volumen
       {:else}
-        Change Volume
+        Cambiar volumen
       {/if}
     </Key>
   </button>

@@ -8,6 +8,8 @@
     ¡Aprovecha nuestra oferta! Por solo
     <span class="advertisement__price">9999999999$ USD</span> sin contar impuestos.
   </p>
+
+  <img src="/assets/chad.webp" alt="" />
 </section>
 
 <style>

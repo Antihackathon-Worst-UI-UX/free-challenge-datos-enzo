@@ -32,6 +32,8 @@
     KILL_SOUND,
   ]
 
+  const INMORTALITY_TIME = 750
+
   let health = 100
   let isMoving = false
   let showHealth = false
@@ -40,6 +42,9 @@
   let buttonContainer: HTMLDivElement
   let slashesContainer: HTMLDivElement
   let isHit = false
+  let lastHit = 0
+  let x = 0
+  let y = 0
 
   const reset = () => {
     health = 100
@@ -87,6 +92,10 @@
 
     if (!isMoving) return
 
+    const isInmortal = Date.now() - lastHit < INMORTALITY_TIME
+
+    if (isInmortal) return
+
     health = health - randomNumber(15, 25)
 
     if (health > 0) return
@@ -111,9 +120,6 @@
 
     reset()
   }
-
-  let x = 0
-  let y = 0
 
   const startMoving = async () => {
     let last = Date.now()
@@ -159,6 +165,7 @@
     slashesContainer.appendChild(image)
 
     const rect = buttonContainer.lastElementChild!.getBoundingClientRect()
+
     const miss =
       clientX < rect.left ||
       clientX > rect.right ||
@@ -166,13 +173,16 @@
       clientY > rect.bottom
 
     if (health > 0) {
-      if (miss) {
+      const isInmortal = Date.now() - lastHit < INMORTALITY_TIME
+
+      if (miss || isInmortal) {
         ATTACK_SOUND.currentTime = 0
         ATTACK_SOUND.play().catch(console.error)
       } else {
         ATTACK_AND_DAMAGE_SOUND.currentTime = 0
         ATTACK_AND_DAMAGE_SOUND.play().catch(console.error)
 
+        lastHit = Date.now()
         isHit = true
 
         setTimeout(() => {
