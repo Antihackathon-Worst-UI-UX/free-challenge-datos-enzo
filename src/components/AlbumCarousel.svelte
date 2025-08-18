@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte'
   import { Marquee } from '@selemondev/svelte-marquee'
   import '@selemondev/svelte-marquee/dist/style.css'
 
@@ -7,18 +6,14 @@
     src: `https://picsum.photos/500/500?random=${index}`,
   }))
 
-  const dispatch = createEventDispatcher()
-
-  const navigate = (to: string) => {
-    dispatch('navigate', to)
-  }
+  export let onChoose: () => void
 </script>
 
 <ul class="list">
   <Marquee class="marquee">
     {#each images as { src } (src)}
       <li class="item">
-        <button on:click={() => navigate('album')} class="button">
+        <button onclick={onChoose} class="button">
           <img {src} alt="" />
         </button>
       </li>

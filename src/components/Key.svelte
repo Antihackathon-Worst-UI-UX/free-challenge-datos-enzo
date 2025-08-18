@@ -14,7 +14,11 @@
 
 <svelte:window on:keydown={handleKeyDown} on:keyup={handleKeyUp} />
 
-<span class="key" class:key--pressed={pressed}>
+<span
+  class="key"
+  class:key--pressed={pressed}
+  class:key--button={eventKey == null}
+>
   <span>
     <slot></slot>
   </span>
@@ -26,15 +30,16 @@
   }
 
   .key {
+    display: inline-block;
     padding: 0.5rem 1.5rem;
-    margin: 0.5rem;
+    margin: 1rem;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
     color: #222;
     background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
     border-radius: 0.5rem;
     border: 0.0625rem solid var(--key-color);
+    width: max-content;
 
     box-shadow:
       0 0.6rem 0 #bbb,
@@ -45,7 +50,8 @@
       box-shadow 0.15s ease-in-out;
   }
 
-  .key--pressed {
+  .key--pressed,
+  .key--button:active {
     transform: translateY(20%);
     background: linear-gradient(145deg, #e8e8e8, #d8d8d8);
     box-shadow:

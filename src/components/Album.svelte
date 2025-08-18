@@ -1,16 +1,31 @@
 <script lang="ts">
+  import type Song from '@types/song'
+
   import { fly, fade } from 'svelte/transition'
   import { onDestroy } from 'svelte'
   import WaveSurfer from 'wavesurfer'
 
+  import Songs from '@components/Songs.svelte'
+  import Key from '@components/Key.svelte'
+
+  export let onExit = () => {}
+
   export let delay = 50
-  export let radius = 100
+  export let radius = 75
+
+  export let data: {
+    name: string
+    image: string
+    songs: Song[]
+  } = {
+    name: '',
+    image: '',
+    songs: [],
+  }
+
+  let currentSong: null | Song = null
 
   let duration = 0
-
-  const tracks = Array.from({ length: 10 }, (_, i) => ({
-    title: `Track ${i + 1}`,
-  }))
 
   let wavesurfer: WaveSurfer
 
@@ -23,9 +38,12 @@
       cursorColor: 'red',
       barWidth: 2,
       responsive: true,
+      interact: false,
+      autoScroll: true,
+      autoCenter: true,
     })
 
-    wavesurfer.load('/song.mp3')
+    if (currentSong) wavesurfer.load(currentSong.file)
 
     wavesurfer.on('ready', () => {
       duration = wavesurfer.getDuration()
@@ -33,22 +51,44 @@
   }
 
   onDestroy(() => {
-    wavesurfer.destroy()
+    if (wavesurfer) wavesurfer.destroy()
   })
 
   let angle = { value: 0, time: Date.now() }
 
-  let targetPlaybackRate = 1
-  let currentPlaybackRate = 1
-
+  let targetPlaybackRate = 0
+  let currentPlaybackRate = 0
   let lastUpdate = 0
 
+  let lastDrag = 0
+
   const updateAudio = (time: DOMHighResTimeStamp) => {
-    if (time - lastUpdate > delay) {
-      currentPlaybackRate += (targetPlaybackRate - currentPlaybackRate) * 0.1
-      wavesurfer.setPlaybackRate(currentPlaybackRate)
+    if (
+      wavesurfer &&
+      wavesurfer.isPlaying() &&
+      wavesurfer.getCurrentTime() <= 1 &&
+      wavesurfer.backend.playbackRate < 0
+    )
+      wavesurfer.pause()
+
+    if (
+      wavesurfer &&
+      !wavesurfer.isPlaying() &&
+      wavesurfer.backend.playbackRate > 0
+    )
+      wavesurfer.play()
+
+    if (Date.now() - lastDrag > 1000) {
+      currentPlaybackRate = targetPlaybackRate = 0
+      if (wavesurfer) wavesurfer.pause()
+      lastUpdate = time
+    } else if (time - lastUpdate > delay) {
+      currentPlaybackRate +=
+        (targetPlaybackRate - currentPlaybackRate - 0.01) * 0.1
+      if (wavesurfer) wavesurfer.setPlaybackRate(currentPlaybackRate)
       lastUpdate = time
     }
+
     requestAnimationFrame(updateAudio)
   }
 
@@ -67,6 +107,8 @@
     updatePosition()
 
     const handleDrag = (event: PointerEvent) => {
+      lastDrag = Date.now()
+
       const rect = container.getBoundingClientRect()
 
       const centerX = rect.left + rect.width / 2
@@ -87,7 +129,7 @@
       const deltaTime = (now - angle.time) / 1000
       const angularSpeed = deltaAngle / deltaTime
 
-      const speedFactor = 0.1
+      const speedFactor = -0.25
       targetPlaybackRate = Math.max(
         -1.25,
         Math.min(1.25, angularSpeed * speedFactor),
@@ -99,11 +141,14 @@
     }
 
     node.addEventListener('pointerdown', () => {
-      if (!wavesurfer.isPlaying()) wavesurfer.play()
-      requestAnimationFrame(updateAudio)
+      if (wavesurfer && !wavesurfer.isPlaying()) {
+        wavesurfer.play()
+        requestAnimationFrame(updateAudio)
+      }
 
       const handleStopDrag = () => {
-        wavesurfer.pause()
+        if (wavesurfer) wavesurfer.pause()
+
         window.removeEventListener('pointermove', handleDrag)
         window.removeEventListener('pointerup', handleStopDrag)
       }
@@ -112,49 +157,91 @@
       window.addEventListener('pointerup', handleStopDrag)
     })
   }
+
+  const handleSelect = (song: Song) => {
+    currentSong = song
+
+    if (wavesurfer) wavesurfer.load(song.file)
+  }
 </script>
 
-<div class="container">
-  <ul class="tracks" transition:fly={{ duration: 300, x: -100 }}>
-    {#each tracks as track}
-      <li class="track">{track.title}</li>
-    {/each}
-  </ul>
+<div class="container" style="--radius: {radius}px">
+  <button
+    class="back-button"
+    on:click={onExit}
+    aria-label="Retroceder"
+    transition:fly={{ duration: 1500, y: 200, x: -200, delay: 1000 }}
+  >
+    <Key>🔙</Key></button
+  >
 
-  <div transition:fly={{ duration: 1000, y: -100 }}>
-    <h1>{tracks[0].title}</h1>
+  <div class="songs" transition:fly={{ duration: 1000, y: -100, delay: 1000 }}>
+    <Songs songs={data.songs} select={handleSelect} />
+  </div>
 
-    <div class="player" transition:fade={{ duration: 3000 }}>
+  {#if currentSong}
+    <div class="player" transition:fade={{ duration: 100 }}>
+      <p>Velocidad: {currentPlaybackRate.toFixed(1)}</p>
       <div use:waveform></div>
     </div>
+  {/if}
 
-    <div class="crank-container" style="--radius: {radius}px">
-      <div class="crank" use:setupCrank></div>
+  {#if currentSong}
+    <div class="crank" transition:fly={{ duration: 500, y: 200, x: 2000 }}>
+      <div class="crank__circle-center">
+        <div class="crank__handle" use:setupCrank></div>
+      </div>
     </div>
-  </div>
+  {/if}
 </div>
 
 <style>
   .container {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr calc(4 * var(--radius));
+    grid-auto-rows: max-content;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
   }
-  .crank-container {
+
+  .back-button {
     position: fixed;
-    bottom: 10rem;
-    right: 10rem;
-    width: 150px;
-    height: 150px;
+    left: 0;
+    bottom: 0;
+    font-size: 2rem;
+  }
+
+  .songs {
+    grid-column: span 2;
+    width: 100%;
+  }
+
+  .player {
+    padding: 1rem;
+    margin-top: 5rem;
+  }
+
+  .crank {
+    display: grid;
+    place-content: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: calc(4 * var(--radius));
+    height: calc(4 * var(--radius));
+  }
+
+  .crank__circle-center {
+    width: 100px;
+    height: 100px;
     background-color: #fff;
     border-radius: 50%;
   }
 
-  .crank {
+  .crank__handle {
     position: absolute;
     width: calc(1.5 * var(--radius));
     height: 10px;
@@ -166,13 +253,13 @@
     cursor: grab;
   }
 
-  .crank::after {
+  .crank__handle::after {
     content: '';
-    position: absolute;
     width: 50px;
     height: 50px;
     background: #222;
     border-radius: 50%;
+    position: absolute;
     right: 0;
     top: 50%;
     transform: translate(50%, -50%);

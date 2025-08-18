@@ -1,0 +1,60 @@
+[
+    {
+        "name": "Album 1",
+        "image": "/music/assets/album1/portrait.png",
+        "songs": [
+            {
+                "name": "Cancion buena 2",
+                "file": "/music/assets/album1/i-love-to-like-302005.mp3",
+                "slug": "/home/juan/NO_VER/asdsa.mp3"
+            },
+            {
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },
+
+            {
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            },{
+                "name": "Cancion buena",
+                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
+                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+            }
+        ]
+    }
+]

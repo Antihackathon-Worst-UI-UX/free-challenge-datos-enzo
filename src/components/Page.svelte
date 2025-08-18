@@ -1,38 +1,52 @@
 <script lang="ts">
+  import albums from '@data/musicfiles.json'
+
   import { fade } from 'svelte/transition'
 
   import Light from '@components/Light.svelte'
   import AlbumCarousel from '@components/AlbumCarousel.svelte'
   import Album from '@components/Album.svelte'
+  import AskYesNo from '@components/AskYesNo.svelte'
 
   let route = 'home'
 
-  const navigate = (event: CustomEvent<string>) => {
-    const { detail } = event
-    route = detail
+  const navigate = () => {
+    route = 'ask'
+  }
+
+  const handleYes = () => {
+    route = 'album'
+  }
+
+  const backHome = () => {
+    route = 'home'
   }
 </script>
 
-<!-- {#if route === 'home'}
+{#if route === 'home'}
   <Light />
-{/if} -->
+{/if}
+
+<AskYesNo open={route == 'ask'} onYes={handleYes} onNo={backHome}>
+  ¿Estás seguro de que quieres elegir ese album?
+</AskYesNo>
 
 {#if route === 'album'}
-  <Album />
+  <Album data={albums[0]} onExit={backHome} />
 {/if}
 
 {#if route == 'home'}
-  <div transition:fade={{ duration: 1000 }}>
+  <div transition:fade={{ duration: 1000, delay: 1000 }}>
     <h1 class="title">★🎸 Selecciona un Album 🎧 ⋆｡ °⋆</h1>
 
     <section class="albums">
       <h2 class="albums__title">Albumes Destacados</h2>
-      <AlbumCarousel on:navigate={navigate} />
+      <AlbumCarousel onChoose={navigate} />
     </section>
 
     <section class="albums">
       <h2 class="albums__title">Albumes Recomendados</h2>
-      <AlbumCarousel on:navigate={navigate} />
+      <AlbumCarousel onChoose={navigate} />
     </section>
   </div>
 {/if}

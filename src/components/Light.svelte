@@ -29,7 +29,7 @@
 
     event.preventDefault()
 
-    size.set(Math.min(1, size.current + 0.5))
+    size.set(Math.min(1, size.current + 0.75))
   }
 
   let active = true
@@ -37,7 +37,7 @@
   onMount(() => {
     const interval = setInterval(() => {
       size.set(Math.max(0, size.current - 0.1))
-    }, 150)
+    }, 300)
 
     return () => {
       active = false
@@ -56,6 +56,7 @@
 <p
   class="instructions"
   class:instructions--hide={size.current > 0.5}
+  in:fade={{ duration: 1000, delay: 500 }}
   out:fade={{ duration: 1000 }}
 >
   <Key eventKey=" ">Espacio</Key>
@@ -63,7 +64,7 @@
 </p>
 
 <div
-  out:fade={{ duration: 1000 }}
+  out:fade={{ duration: 250 }}
   class="light"
   class:light--active={size.current > 0.1}
   style="--position-x: {x}px; --position-y: {y}px;--size:{size.current};"
@@ -108,6 +109,10 @@
     z-index: 1000000;
     user-select: none;
     pointer-events: none;
+
+    &:first-child {
+      font-size: 1.1rem;
+    }
 
     &--hide {
       opacity: 0;
