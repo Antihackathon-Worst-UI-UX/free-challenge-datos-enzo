@@ -11,6 +11,8 @@
   export let wavesurfer: WaveSurfer
   export let key: string
 
+  const SLOT_MACHINE_SOUND = new Audio('/assets/slot-machine.mp3')
+
   let openInfo = false
 
   const VALUES = {
@@ -127,6 +129,12 @@
 
     slotReel.init()
   })
+
+  const handleClick = () => {
+    SLOT_MACHINE_SOUND.currentTime = 0
+    SLOT_MACHINE_SOUND.volume = 0.65
+    SLOT_MACHINE_SOUND.play()
+  }
 </script>
 
 <section class="equalizer" aria-label="Equalizador">
@@ -144,7 +152,7 @@
 
   <div class="equalizer__buttons">
     <button onclick={handleOpenInfo}><Key>Cómo usar</Key></button>
-    <button id={buttonId}><Key>Girar</Key></button>
+    <button onclick={handleClick} id={buttonId}><Key>Girar</Key></button>
   </div>
 </section>
 

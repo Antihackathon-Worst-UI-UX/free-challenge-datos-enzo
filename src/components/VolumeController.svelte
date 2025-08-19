@@ -73,7 +73,7 @@
     overflow: hidden;
     position: relative;
     min-height: 5rem;
-    height: 17.5rem;
+    height: 15rem;
   }
 
   .progress::before {
