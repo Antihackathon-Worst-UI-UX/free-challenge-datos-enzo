@@ -73,10 +73,10 @@
 <style lang="scss">
   .light {
     position: fixed;
-    left: -100%;
-    top: -100%;
-    width: 200%;
-    height: 200%;
+    left: -250%;
+    top: -250%;
+    width: 500%;
+    height: 500%;
     background: radial-gradient(
       circle,
       transparent,

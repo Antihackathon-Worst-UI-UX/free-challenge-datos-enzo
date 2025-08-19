@@ -1,18 +1,24 @@
 <script lang="ts">
+  import type Album from '@types/album'
+
   import albums from '@data/musicfiles.json'
+
+  const reversedAlbums = [...albums].reverse()
 
   import { fade } from 'svelte/transition'
 
   import Light from '@components/Light.svelte'
   import AlbumCarousel from '@components/AlbumCarousel.svelte'
-  import Album from '@components/Album.svelte'
+  import Player from '@components/Player.svelte'
   import AskYesNo from '@components/AskYesNo.svelte'
+
+  let selectedAlbum: Album | null = null
 
   let route = 'home'
 
-  const navigate = () => {
-    route = 'ask'
-  }
+  // const navigate = () => {
+  //   route = 'ask'
+  // }
 
   const handleYes = () => {
     route = 'album'
@@ -20,6 +26,11 @@
 
   const backHome = () => {
     route = 'home'
+  }
+
+  const handleChoose = (album: Album) => {
+    selectedAlbum = album
+    route = 'ask'
   }
 </script>
 
@@ -32,7 +43,7 @@
 </AskYesNo>
 
 {#if route === 'album'}
-  <Album data={albums[0]} onExit={backHome} />
+  <Player album={selectedAlbum} onExit={backHome} />
 {/if}
 
 {#if route == 'home'}
@@ -41,12 +52,12 @@
 
     <section class="albums">
       <h2 class="albums__title">Albumes Destacados</h2>
-      <AlbumCarousel onChoose={navigate} />
+      <AlbumCarousel {albums} onchoose={handleChoose} />
     </section>
 
     <section class="albums">
       <h2 class="albums__title">Albumes Recomendados</h2>
-      <AlbumCarousel onChoose={navigate} />
+      <AlbumCarousel albums={reversedAlbums} onchoose={handleChoose} />
     </section>
   </div>
 {/if}

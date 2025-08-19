@@ -1,60 +1,427 @@
 [
     {
-        "name": "Album 1",
-        "image": "/music/assets/album1/portrait.png",
+        "name": "Singing till i love",
+        "image": "/music/assets/album1/1.jpg",
+        "description": "Amo muchas cosas",
         "songs": [
             {
-                "name": "Cancion buena 2",
+                "name": "I Love to Like",
                 "file": "/music/assets/album1/i-love-to-like-302005.mp3",
-                "slug": "/home/juan/NO_VER/asdsa.mp3"
+                "slug": "/Colo-colo/system_32/Node_modules/x86_program_files/documentos/winrar_installer/cancion19.mp3"
             },
             {
-                "name": "Cancion buena",
+                "name": "I Love Valentine",
                 "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+                "slug": "/.minecraft/fortnite/videos_borrados/cosas_borrar/Git/documentos/cancion31.mp3"
             },
-
             {
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
-            },{
-                "name": "Cancion buena",
-                "file": "/music/assets/album1/i-love-valentinex27s-day-302007.mp3",
-                "slug": "/home/juan/i-love-valentinex27s-day-302007.mp3"
+                "name": "Think of Me",
+                "file": "/music/assets/album1/think-of-me-302173.mp3",
+                "slug": "/Wolfram_files/recicle_bin/cosas_borrar/x86_program_files/progra_avanzada/usr/cancion88.mp3"
+            },
+            {
+                "name": "We Love Artworks",
+                "file": "/music/assets/album1/we-love-artworks-302161.mp3",
+                "slug": "/descargas/.pycache/carpeta1/carpeta_varios/Steam/system_32/cancion001.mp3"
             }
         ]
+
+    },
+    {
+        "name": "Hype on Beats",
+        "image": "/music/assets/album2/2.png",
+        "description": "album de mi hermano chico",
+        "songs": [
+            {
+                "name": "Desert Ritual",
+                "file": "/music/assets/album2/desert-ritual-379636.mp3",
+                "slug": "/carpeta_secreta/cosas_universidad/memes/riot_games/documentos/cleomod/cancion33.mp3"
+            },
+            {
+                "name": "Move off the Block",
+                "file": "/music/assets/album2/move-off-the-block-379640.mp3",
+                "slug": "/cleomod/Node_modules/codigo_basura/home/tmodloader/x86_program_files/cancion103.mp3"
+            },
+            {
+                "name": "Silvery Strut",
+                "file": "/music/assets/album2/silvery-strut-379641.mp3",
+                "slug": "/carpeta2/carpeta1/.pycache/instalador_matlab/codigo_basura/Colo-colo/cancion110.mp3"
+            },
+            {
+                "name": "Sunset Flow",
+                "file": "/music/assets/album2/sunset-flow-379635.mp3",
+                "slug": "/bin/Git/Mangas_sigma/documentos/cosas_mama/instalador_matlab/cancion100.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Electro swing",
+        "image": "/music/assets/album3/3.jpg",
+        "description": "Synthetic blend",
+        "songs": [
+            {
+                "name": "Apex Zenith",
+                "file": "/music/assets/album3/apex-zenith-276019.mp3",
+                "slug": "/system_32/papelera_de_reciclaje/Capstone/documentos/x86_program_files/Git/cancion312.mp3"
+            },
+            {
+                "name": "Nothing to Lose",
+                "file": "/music/assets/album3/nothing-to-lose-276021.mp3",
+                "slug": "/descargas/cosas_universidad/mat1610/.pycache/Colo-colo/Capstone/cancion413.mp3"
+            },
+            {
+                "name": "Number One",
+                "file": "/music/assets/album3/number-one-no-vocal-276058.mp3",
+                "slug": "/instalador_vivado/appdata/cleomod/documentos/progra_avanzada/.minecraft/cancion613.mp3"
+            },
+            {
+                "name": "Okay More",
+                "file": "/music/assets/album3/okay-more-296329.mp3",
+                "slug": "/.minecraft/fortnite/winrar_installer/Wolfram_files/home/papelera_de_reciclaje/cancion831.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Cool beats",
+        "image": "/music/assets/album4/4.jpg",
+        "description": "I don't know what to put here",
+        "songs": [
+            {
+                "name": "Cool Amp",
+                "file": "/music/assets/album4/cool-amp-calm-medium-vocal-edit-263893.mp3",
+                "slug": "/usr/Py_game/Git/desktop/codigo_basura/mat1610/cancion356.mp3"
+            },
+            {
+                "name": "Velvet Skies",
+                "file": "/music/assets/album4/velvet-skies-263880.mp3",
+                "slug": "/.pycache/fortnite/Anime/Py_game/instalador_vivado/memes/cancion512.mp3"
+            },
+            {
+                "name": "Vibrant Shadows",
+                "file": "/music/assets/album4/vibrant-shadows-263882.mp3",
+                "slug": "/Py_game/home/desktop/tmodloader/videos_borrados/recicle_bin/cancion637.mp3"
+            },
+            {
+                "name": "Zephyr Prism",
+                "file": "/music/assets/album4/zephyr-prism-263883.mp3",
+                "slug": "/cosas_no_ver/descargas/mat1610/Steam/cleomod/Anime/cancion124.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "WILD WEEK",
+        "image": "/music/assets/album5/5.png",
+        "description": "ALBUM PARA LA SEMANA DE EXAMENES",
+        "songs": [
+            {
+                "name": "Behind You",
+                "file": "/music/assets/album5/behind-you-367865.mp3",
+                "slug": "/x86_program_files/recicle_bin/instalador_vivado/desktop/usr/riot_games/cancion512.mp3"
+            },
+            {
+                "name": "Mad World",
+                "file": "/music/assets/album5/mad-world-365968.mp3",
+                "slug": "/descargas/instalador_vivado/Steam/Colo-colo/Capstone/carpeta2/cancion327.mp3"
+            },
+            {
+                "name": "Rush Hour",
+                "file": "/music/assets/album5/rush-hour-339439.mp3",
+                "slug": "/documentos/Steam/videos_borrados/usr/cosas_mama/Node_modules/cancion41.mp3"
+            },
+            {
+                "name": "The Forest",
+                "file": "/music/assets/album5/the-forest-350295.mp3",
+                "slug": "/Node_modules/mat1610/Colo-colo/tmodloader/carpeta_varios/Capstone/cancion93.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Guitar Summer",
+        "image": "/music/assets/album6/6.png",
+        "description": "Adventuring with a guitar",
+        "songs": [
+            {
+                "name": "Bird Song",
+                "file": "/music/assets/album6/bird-song-instrumental-198595.mp3",
+                "slug": "/Node_modules/instalador_vivado/Mangas_sigma/carpeta2/carpeta_varios/Wolfram_files/cancion71.mp3"
+            },
+            {
+                "name": "Cozy Morning",
+                "file": "/music/assets/album6/cozy-morning-instrumental-198596.mp3",
+                "slug": "/memes/descargas/riot_games/cosas_mama/system_32/bin/cancion95.mp3"
+            },
+            {
+                "name": "Hygge Life",
+                "file": "/music/assets/album6/hygge-life-189310.mp3",
+                "slug": "/Colo-colo/Capstone/codigo_basura/.pycache/instalador_vivado/Py_game/cancion88.mp3"
+            },
+            {
+                "name": "Shine for Me",
+                "file": "/music/assets/album6/shine-for-me-instrumental-198594.mp3",
+                "slug": "/appdata/Mangas/instalador_matlab/carpeta_secreta/usr/cosas_borrar/cancion63.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Dark Jazz",
+        "image": "/music/assets/album7/7.jpg",
+        "description": "El mejor jazz oscuro",
+        "songs": [
+            {
+                "name": "Piano and Guitar",
+                "file": "/music/assets/album7/dark-jazz-piano-and-guitar-388575",
+                "slug": "/fortnite/progra_avanzada/Steam/cosas_borrar/carpeta1/desktop/cancion49.mp3"
+            },
+            {
+                "name": "Sax and el Guitar",
+                "file": "/music/assets/album7/dark-jazz-sax-and-el-guitar-387688.mp3",
+                "slug": "/cosas_universidad/carpeta_secreta/cleomod/instalador_vivado/desktop/papelera_de_reciclaje/cancion38.mp3"
+            },
+            {
+                "name": "Saxophone",
+                "file": "/music/assets/album7/dark-jazz-saxophone-388468.mp3",
+                "slug": "/bin/carpeta2/appdata/cosas_mama/x86_program_files/carpeta_varios/cancion65.mp3"
+            },
+            {
+                "name": "Piano Dark",
+                "file": "/music/assets/album7/piano-dark-jazz-389637.mp3",
+                "slug": "/appdata/Py_game/progra_avanzada/Anime/system_32/Steam/cancion56.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "8-Bits",
+        "image": "/music/assets/album8/8.png",
+        "description": "Music made in 8-Bits for gaming",
+        "songs": [
+            {
+                "name": "8-Bits Adventure",
+                "file": "/music/assets/album8/game-gaming-minecraft-background-music-377647.mp3",
+                "slug": "/codigo_basura/Node_modules/winrar_installer/bin/cosas_universidad/memes/cancion73.mp3"
+            },
+            {
+                "name": "8-Bits Hero",
+                "file": "/music/assets/album8/gaming-game-minecraft-background-music-372242.mp3",
+                "slug": "/carpeta2/instalador_vivado/usr/home/trabajo_del_pelao/.minecraft/cancion81.mp3"
+            },
+            {
+                "name": "8-Bits Experience",
+                "file": "/music/assets/album8/gaming-game-minecraft-background-music-387000.mp3",
+                "slug": "/riot_games/desktop/Py_game/instalador_matlab/Node_modules/Capstone/cancion06.mp3"
+            },
+            {
+                "name": "8-Bits Explorer",
+                "file": "/music/assets/album8/roblox-minecraft-fortnite-video-game-music-358426.mp3",
+                "slug": "/bin/desktop/Colo-colo/carpeta1/memes/The_Binding_of_Isaac_Rebirth/cancion48.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "80s Vibes",
+        "image": "/music/assets/album9/9.jpg",
+        "description": "80s Feelings",
+        "songs": [
+            {
+                "name": "A Hero of the 80s",
+                "file": "/music/assets/album9/a-hero-of-the-80s-126684.mp3",
+                "slug": "/Wolfram_files/Py_game/Git/.pycache/system_32/memes/cancion884.mp3"
+            },
+            {
+                "name": "Flying in a Dream",
+                "file": "/music/assets/album9/flying-in-a-dream_55sec-202373.mp3",
+                "slug": "/tmodloader/fortnite/documentos/system_32/Node_modules/appdata/cancion941.mp3"
+            },
+            {
+                "name": "Lady of the 80",
+                "file": "/music/assets/album9/lady-of-the-80x27s-128379.mp3",
+                "slug": "/cosas_mama/cosas_no_ver/Capstone/usr/recicle_bin/documentos/cancion411.mp3"
+            },
+            {
+                "name": "On the Road to the Eighties",
+                "file": "/music/assets/album9/on-the-road-to-the-eighties_59sec-177566.mp3",
+                "slug": "/riot_games/carpeta_secreta/carpeta1/videos_borrados/winrar_installer/x86_program_files/cancion752.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Creepy World",
+        "image": "/music/assets/album10/10.jpg",
+        "description": "Canciones para mis videos de teorias conspiranoicas",
+        "songs": [
+            {
+                "name": "Countdown Horror",
+                "file": "/music/assets/album10/countdown-horror-trailer-music-347560.mp3",
+                "slug": "/Py_game/recicle_bin/carpeta_varios/instalador_matlab/memes/Git/cancion423.mp3"
+            },
+            {
+                "name": "Dark Horror",
+                "file": "/music/assets/album10/dark-atmospheric-horror-ambient-347623.mp3",
+                "slug": "/.pycache/instalador_vivado/tmodloader/appdata/descargas/system_32/cancion883.mp3"
+            },
+            {
+                "name": "Piano Experiments",
+                "file": "/music/assets/album10/edgy-experiments-piano-tension-320887.mp3",
+                "slug": "/system_32/recicle_bin/tmodloader/Anime/Steam/cosas_universidad/cancion531.mp3"
+            },
+            {
+                "name": "Misterious Forest",
+                "file": "/music/assets/album10/mysterious-forest-creepy-lofi-halloween-lofi-halloween-music-168238.mp3",
+                "slug": "/papelera_de_reciclaje/memes/Colo-colo/carpeta_secreta/mat1610/carpeta_varios/cancion419.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "JAJAJAJA",
+        "image": "/music/assets/album11/11.jpg",
+        "description": "LLEVO 30 HORAS HACIENDO ESTO AJAJAJAJAJA",
+        "songs": [
+            {
+                "name": "Funny Day",
+                "file": "/music/assets/album11/funny-comedy-cartoon-background-music-340853.mp3",
+                "slug": "/appdata/Py_game/system_32/home/Capstone/mat1610/cancion008.mp3"
+            },
+            {
+                "name": "Comedy Cartoon",
+                "file": "/music/assets/album11/funny-comedy-cartoon-background-music-359484.mp3",
+                "slug": "/x86_program_files/memes/winrar_installer/cosas_mama/riot_games/fortnite/cancion477.mp3"
+            },
+            {
+                "name": "Happy Kids",
+                "file": "/music/assets/album11/funny-kids_59sec-190857.mp3",
+                "slug": "/Capstone/progra_avanzada/riot_games/Wolfram_files/usr/bin/cancion551.mp3"
+            },
+            {
+                "name": "Tiny Inventors",
+                "file": "/music/assets/album11/tiny-inventors_57sec-329139.mp3",
+                "slug": "/Git/descargas/usr/documentos/home/fortnite/cancion792.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Metal Duckies",
+        "image": "/music/assets/album12/12.jpg",
+        "description": "Metal de patos, no lo entenderias",
+        "songs": [
+            {
+                "name": "Heavy Drag",
+                "file": "/music/assets/album12/heavy-drag-mid-tempo-nu-metal-instrumental-379674.mp3",
+                "slug": "/Capstone/Git/videos_borrados/usr/carpeta_secreta/desktop/cancion416.mp3"
+            },
+            {
+                "name": "Metal Dark Matter",
+                "file": "/music/assets/album12/metal-dark-matter-111451.mp3",
+                "slug": "/Capstone/Git/videos_borrados/usr/carpeta_secreta/cleomod/cancion8931.mp3"
+            },
+            {
+                "name": "Sports Metal",
+                "file": "/music/assets/album12/powerful-action-sports-metal-music-329296.mp3",
+                "slug": "/system_32/carpeta_varios/cosas_borrar/winrar_installer/tmodloader/instalador_matlab/cancion318.mp3"
+            },
+            {
+                "name": "Tantrum",
+                "file": "/music/assets/album12/tantrum-388198.mp3",
+                "slug": "/cleomod/carpeta2/The_Binding_of_Isaac_Rebirth/fortnite/cosas_mama/instalador_vivado/cancion1241.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Bass and Drum",
+        "image": "/music/assets/album13/13.jpg",
+        "description": "Album para concentrarme en la u",
+        "songs": [
+            {
+                "name": "Energetic Sports",
+                "file": "/music/assets/album13/energetic-sports-346327.mp3",
+                "slug": "/codigo_basura/cosas_mama/cosas_universidad/x86_program_files/cleomod/fortnite/cancion414.mp3"
+            },
+            {
+                "name": "Glass Buildings",
+                "file": "/music/assets/album13/glass-buildings-liquid-jungle-breakbeat-drum-and-bass-loopable-edit-358429.mp3",
+                "slug": "/descargas/codigo_basura/documentos/tmodloader/appdata/carpeta_secreta/canciones8812.mp3"
+            },
+            {
+                "name": "Hyper Garden Jungle",
+                "file": "/music/assets/album13/hyper-garden-jungle-breakbeat-drum-and-bass-loop-edit-356528.mp3",
+                "slug": "/Steam/descargas/cosas_mama/desktop/Wolfram_files/documentos/canciones912.mp3"
+            },
+            {
+                "name": "Jungle Waves",
+                "file": "/music/assets/album13/jungle-waves-drumampbass-electronic-inspiring-promo-345013.mp3",
+                "slug": "/desktop/carpeta_varios/instalador_vivado/papelera_de_reciclaje/recycle_bin/x86_program_files/cancion5654.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Prayers",
+        "image": "/music/assets/album14/14.jpg",
+        "description": "Album para hacer mis tareas a ultima hora",
+        "songs": [
+            {
+                "name": "Voices of Peace",
+                "file": "/music/assets/album14/6-copyrighted-music-126060.mp3",
+                "slug": "/progra_avanzada/codigo_basura/carpeta1/tmodloader/desktop/papelera_de_reciclaje/cancion1231.mp3"
+            },
+            {
+                "name": "Gregoriant Chant",
+                "file": "/music/assets/album14/gregorian-chant-regina-caeli-prayer-341917.mp3",
+                "slug": "/cleomod/.minecraft/Py_game/riot_games/progra_avanzada/tmodloader/cancion9546.mp3"
+            },
+            {
+                "name": "Prayer for Peace",
+                "file": "/music/assets/album14/prayer-for-peace-389251.mp3",
+                "slug": "/papelera_de_reciclaje/codigo_basura/bin/progra_avanzada/.pycache/The_Binding_of_Isaac_Rebirth/cancion1364.mp3"
+            },
+            {
+                "name": "Voices of Eternity",
+                "file": "/music/assets/album14/voices-of-eternity-church-cathedral-choir-297751.mp3",
+                "slug": "/codigo_basura/descargas/Py_game/tmodloader/cosas_universidad/cleomod/cancion7583.mp3"
+            }
+        ]
+
+    },
+    {
+        "name": "Album Tutoriales",
+        "image": "/music/assets/album15/15.jpg",
+        "description": "Canciones para hacer mis tutoriales de Wolfram",
+        "songs": [
+            {
+                "name": "Crimson Fly",
+                "file": "/music/assets/album15/Crimson Fly - Huma Huma.mp3",
+                "slug": "/winrar_installer/memes/cosas_no_ver/cleomod/trabajo_del_pelao/Colo-colo/cancion777.mp3"
+            },
+            {
+                "name": "Faded",
+                "file": "/music/assets/album15/Faded.mp3",
+                "slug": "/cosas_borrar/cosas_mama/instalador_vivado/tmodloader/Colo-colo/instalador_matlab/cancion888.mp3"
+            },
+            {
+                "name": "Spring in my Step",
+                "file": "/music/assets/album15/Spring-In-My-Step.mp3",
+                "slug": "/carpeta2/codigo_basura/usr/Git/Steam/system_32/cancion1000.mp3"
+            },
+            {
+                "name": "Sky High",
+                "file": "/music/assets/album15/y2mate--Elektronomia-Sky-High-Progressive-House-NCS.mp3",
+                "slug": "/carpeta_varios/system_32/Capstone/cosas_borrar/The_Binding_of_Isaac_Rebirth/carpeta_secreta/cancion999.mp3"
+            },
+            {
+                "name": "Get Outside",
+                "file": "/music/assets/album15/y2mate--Get-Outside-Jason-Farnham-No-Copyright-Music.mp3",
+                "slug": "/system_32/papelera_de_reciclaje/codigo_basura/.minecraft/x86_program_files/cosas_universidad/cancion333.mp3"
+            }
+        ]
+
     }
 ]
