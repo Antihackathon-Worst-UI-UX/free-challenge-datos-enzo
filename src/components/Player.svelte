@@ -11,6 +11,7 @@
   import VolumeController from '@components/VolumeController.svelte'
   import Modal from '@components/Modal.svelte'
   import Advertisement from '@components/Advertisement.svelte'
+  import Equalizer from '@components/Equalizer.svelte'
 
   export let onExit = () => {}
 
@@ -54,8 +55,8 @@
       wavesurfer.seekTo(0)
     })
 
-    wavesurfer.on('error', () => {
-      console.error('WaveSurfer error')
+    wavesurfer.on('error', (error: Error) => {
+      console.error(error)
       wavesurfer.seekTo(0)
     })
   }
@@ -218,6 +219,8 @@
     </div>
 
     <VolumeController bind:value={volume} />
+
+    <Equalizer {wavesurfer} />
   {/if}
 </div>
 
@@ -239,7 +242,7 @@
 
   .back-button {
     position: fixed;
-    left: 0;
+    right: 0;
     bottom: 0;
     font-size: 2rem;
   }

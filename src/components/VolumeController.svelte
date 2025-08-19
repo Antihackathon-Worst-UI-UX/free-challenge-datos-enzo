@@ -63,6 +63,7 @@
     align-items: center;
     font-size: 0.75rem;
     grid-column-start: 3;
+    grid-row: span 2;
   }
 
   .progress {
