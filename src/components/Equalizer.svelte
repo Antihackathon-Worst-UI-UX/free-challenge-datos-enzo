@@ -123,6 +123,7 @@
       radialSegments: 35,
       symbolsPerReel: 5,
       cylinderSpacingRatio: 0.1,
+      baseSpinSpeed: 1.5,
       initialSegments: generateState(),
       queuedSpinStates: Array.from({ length: 1e4 }, generateSpinState),
     })
@@ -132,7 +133,7 @@
 
   const handleClick = () => {
     SLOT_MACHINE_SOUND.currentTime = 0
-    SLOT_MACHINE_SOUND.volume = 0.65
+    SLOT_MACHINE_SOUND.volume = 0.35
     SLOT_MACHINE_SOUND.play()
   }
 </script>
